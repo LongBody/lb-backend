@@ -35,7 +35,11 @@ docker build -t lb-backend .
 
 Run the container:
 ```bash
-docker run -d --name lb-backend -p 3000:3000 lb-backend
+docker run -d \
+  --name lb-backend \
+  --network app-net \
+  -p 3000:3000 \
+  lb-backend
 ```
 
 The server will be available at `http://localhost:3000`.
